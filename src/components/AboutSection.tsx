@@ -5,8 +5,8 @@ const AboutSection = () => {
   return (
     <section className="py-16 px-6">
       <div className="max-w-4xl mx-auto">
-        <NeomorphCard className="text-center" inset>
-          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-accent/20 flex items-center justify-center">
+        <NeomorphCard className="text-center fade-in" inset>
+          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-accent/20 flex items-center justify-center transition-transform duration-300 hover:scale-110 hover:rotate-12">
             <Lightbulb className="w-8 h-8 text-accent" />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Tentang EduMuda</h2>

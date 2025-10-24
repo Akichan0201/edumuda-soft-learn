@@ -25,8 +25,13 @@ const AnnouncementSection = () => {
           </h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
-          {announcements.map((announcement) => (
-            <NeomorphCard key={announcement.title} hoverable>
+          {announcements.map((announcement, index) => (
+            <NeomorphCard 
+              key={announcement.title} 
+              hoverable 
+              className="fade-in"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
               <h3 className="text-xl font-semibold mb-3">{announcement.title}</h3>
               <p className="text-muted-foreground mb-4">{announcement.description}</p>
               <p className="text-sm text-muted-foreground/70">{announcement.date}</p>

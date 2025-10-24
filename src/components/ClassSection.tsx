@@ -35,9 +35,14 @@ const ClassSection = () => {
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {classes.map((classItem) => (
-            <NeomorphCard key={classItem.grade} hoverable className="text-center">
-              <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl ${classItem.bgColor} neomorph-inset flex items-center justify-center`}>
+          {classes.map((classItem, index) => (
+            <NeomorphCard 
+              key={classItem.grade} 
+              hoverable 
+              className="text-center fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl ${classItem.bgColor} neomorph-inset flex items-center justify-center transition-transform duration-300 hover:scale-110`}>
                 <classItem.icon className={`w-10 h-10 ${classItem.color}`} />
               </div>
               <h3 className="text-2xl font-semibold mb-3">{classItem.grade}</h3>

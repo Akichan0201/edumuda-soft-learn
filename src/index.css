@@ -8,60 +8,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Neumorphic base colors - soft white with subtle blue tint */
-    --background: 210 20% 97%;
+    /* Pure white base with pastel accents */
+    --background: 0 0% 100%;
     --foreground: 220 15% 25%;
 
-    --card: 210 20% 97%;
+    --card: 0 0% 100%;
     --card-foreground: 220 15% 25%;
 
-    --popover: 210 20% 97%;
+    --popover: 0 0% 100%;
     --popover-foreground: 220 15% 25%;
 
-    /* Pastel blue - primary color */
-    --primary: 200 60% 75%;
+    /* Light blue accent - #E3F2FD */
+    --primary: 204 79% 94%;
     --primary-foreground: 220 15% 25%;
 
-    /* Mint green - secondary color */
-    --secondary: 160 50% 80%;
+    /* Lavender accent - #F3E5F5 */
+    --secondary: 293 47% 93%;
     --secondary-foreground: 220 15% 25%;
 
-    /* Soft lavender - muted/accent */
-    --muted: 270 40% 88%;
+    /* Light yellow accent - #FFF8E1 */
+    --muted: 46 100% 94%;
     --muted-foreground: 220 10% 45%;
 
-    /* Soft lavender accent */
-    --accent: 270 40% 85%;
+    /* Lavender for accent elements */
+    --accent: 293 47% 93%;
     --accent-foreground: 220 15% 25%;
 
     --destructive: 0 70% 70%;
-    --destructive-foreground: 210 20% 97%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 220 15% 88%;
     --input: 220 15% 88%;
-    --ring: 200 60% 75%;
+    --ring: 204 79% 94%;
 
     --radius: 1rem;
     
-    /* Neumorphic shadow system */
-    --neomorph-shadow-light: -6px -6px 12px rgba(255, 255, 255, 0.8);
-    --neomorph-shadow-dark: 6px 6px 12px rgba(0, 0, 0, 0.1);
+    /* Neumorphic shadow system with #d1d9e6 and #ffffff */
+    --neomorph-shadow-light: -10px -10px 30px rgba(255, 255, 255, 1);
+    --neomorph-shadow-dark: 10px 10px 30px rgba(209, 217, 230, 0.8);
     --neomorph-shadow: var(--neomorph-shadow-light), var(--neomorph-shadow-dark);
     
-    --neomorph-shadow-inset-light: inset -4px -4px 8px rgba(255, 255, 255, 0.5);
-    --neomorph-shadow-inset-dark: inset 4px 4px 8px rgba(0, 0, 0, 0.08);
+    --neomorph-shadow-inset-light: inset -6px -6px 20px rgba(255, 255, 255, 1);
+    --neomorph-shadow-inset-dark: inset 6px 6px 20px rgba(209, 217, 230, 0.6);
     --neomorph-shadow-inset: var(--neomorph-shadow-inset-light), var(--neomorph-shadow-inset-dark);
     
-    --neomorph-shadow-hover-light: -8px -8px 16px rgba(255, 255, 255, 0.9);
-    --neomorph-shadow-hover-dark: 8px 8px 16px rgba(0, 0, 0, 0.15);
+    --neomorph-shadow-hover-light: -12px -12px 35px rgba(255, 255, 255, 1);
+    --neomorph-shadow-hover-dark: 12px 12px 35px rgba(209, 217, 230, 0.9);
     --neomorph-shadow-hover: var(--neomorph-shadow-hover-light), var(--neomorph-shadow-hover-dark);
 
-    /* Gradient overlays */
-    --gradient-hero: linear-gradient(135deg, hsl(210, 20%, 97%) 0%, hsl(200, 40%, 92%) 50%, hsl(160, 30%, 92%) 100%);
+    /* Gradient overlays with new accent colors */
+    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(204, 79%, 94%) 50%, hsl(293, 47%, 93%) 100%);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --radius: 1rem;
+    --transition-fade: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -126,7 +125,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-['Poppins',sans-serif];
+    @apply bg-background text-foreground font-['Poppins','Nunito',sans-serif];
   }
 }
 
@@ -145,6 +144,21 @@ All colors MUST be HSL.
   
   .neomorph-hover:hover {
     box-shadow: var(--neomorph-shadow-hover);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

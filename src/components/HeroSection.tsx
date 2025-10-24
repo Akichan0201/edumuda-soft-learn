@@ -16,7 +16,7 @@ const HeroSection = () => {
             </p>
             <Button 
               size="lg" 
-              className="neomorph neomorph-hover bg-primary text-primary-foreground rounded-xl px-8 font-medium"
+              className="neomorph neomorph-hover bg-primary text-primary-foreground rounded-2xl px-8 py-6 font-medium text-lg hover:shadow-neomorph-hover"
             >
               Mulai Belajar
             </Button>
