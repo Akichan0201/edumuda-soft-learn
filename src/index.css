@@ -77,6 +77,16 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Class card colors */
+    --class-7-bg: 210 100% 95%;
+    --class-7-accent: 217 91% 60%;
+    --class-8-bg: 262 100% 96%;
+    --class-8-accent: 258 90% 66%;
+    --class-9-bg: 146 57% 94%;
+    --class-9-accent: 158 84% 39%;
+    --text-navy: 210 29% 29%;
+    --text-gray: 184 6% 53%;
   }
 
   .dark {
