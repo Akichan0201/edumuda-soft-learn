@@ -20,7 +20,9 @@ const AnnouncementSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-            <Megaphone className="w-8 h-8 text-primary" />
+            <div className="w-12 h-12 rounded-xl bg-primary/20 neomorph flex items-center justify-center">
+              <Megaphone className="w-6 h-6 text-primary stroke-[2.5]" />
+            </div>
             Info Terbaru dari Guru
           </h2>
         </div>

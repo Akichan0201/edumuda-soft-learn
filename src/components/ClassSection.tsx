@@ -42,8 +42,8 @@ const ClassSection = () => {
               className="text-center fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl ${classItem.bgColor} neomorph-inset flex items-center justify-center transition-transform duration-300 hover:scale-110`}>
-                <classItem.icon className={`w-10 h-10 ${classItem.color}`} />
+              <div className={`w-24 h-24 mx-auto mb-6 rounded-2xl ${classItem.bgColor} neomorph flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg`}>
+                <classItem.icon className={`w-12 h-12 ${classItem.color} stroke-[2.5]`} />
               </div>
               <h3 className="text-2xl font-semibold mb-3">{classItem.grade}</h3>
               <p className="text-muted-foreground text-sm">

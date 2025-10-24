@@ -32,8 +32,8 @@ const Header = () => {
             ))}
           </nav>
         </div>
-        <div className="w-10 h-10 rounded-full neomorph flex items-center justify-center">
-          <User className="w-5 h-5 text-primary" />
+        <div className="w-10 h-10 rounded-full neomorph flex items-center justify-center hover:scale-105 transition-transform cursor-pointer">
+          <User className="w-5 h-5 text-primary stroke-[2.5]" />
         </div>
       </NeomorphCard>
     </header>
