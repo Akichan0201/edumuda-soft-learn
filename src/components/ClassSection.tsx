@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ClassSection = () => {
   const classes = [
     {
@@ -30,7 +32,7 @@ const ClassSection = () => {
   ];
 
   return (
-    <section className="py-16 px-6 bg-gradient-to-br from-[#F9FAFB] to-[#EEF1F5]">
+    <section id="kelas" className="py-16 px-6 bg-gradient-to-br from-[#F9FAFB] to-[#EEF1F5]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-[28px] font-semibold mb-3 text-[hsl(var(--text-navy))]">
@@ -42,20 +44,20 @@ const ClassSection = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {classes.map((classItem, index) => (
-            <div
+            <Link
               key={classItem.grade}
+              to={`/kelas-${classItem.number}`}
               className={`
                 ${classItem.bgColor} ${classItem.hoverBgColor}
                 rounded-[24px] p-8 text-center
-                transition-all duration-300 ease-out cursor-pointer
-                hover:-translate-y-1.5
+                transition-all duration-200 ease-out cursor-pointer hover-lift
                 fade-in
                 shadow-[8px_8px_16px_rgba(0,0,0,0.1),-8px_-8px_16px_rgba(255,255,255,0.7)]
-                hover:shadow-[10px_10px_20px_rgba(0,0,0,0.12),-10px_-10px_20px_rgba(255,255,255,0.8)]
+                hover:shadow-[12px_12px_24px_rgba(0,0,0,0.15),-12px_-12px_24px_rgba(255,255,255,0.9)]
               `}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className={`text-[72px] font-extrabold leading-none mb-4 ${classItem.textColor} ${classItem.glowColor} transition-all duration-300`}>
+              <div className={`text-[72px] font-extrabold leading-none mb-4 ${classItem.textColor} ${classItem.glowColor} transition-colors duration-200`}>
                 {classItem.number}
               </div>
               <h3 className="text-lg font-semibold mb-2 font-['Nunito']">
@@ -64,7 +66,7 @@ const ClassSection = () => {
               <p className="text-sm text-[hsl(var(--text-gray))] font-['Nunito']">
                 {classItem.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

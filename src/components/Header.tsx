@@ -1,12 +1,23 @@
 import { User } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import NeomorphCard from "./NeomorphCard";
+import { cn } from "@/lib/utils";
+import { smoothScrollTo } from "@/utils/smoothScroll";
 
 const Header = () => {
+  const location = useLocation();
+
   const navItems = [
-    { name: "Home", active: true },
-    { name: "Materi", active: false },
-    { name: "Tentang", active: false },
+    { name: "Home", path: "/", active: location.pathname === "/" },
+    { name: "Materi", path: "/", hash: "kelas", active: location.pathname === "/" && location.hash === "#kelas" },
+    { name: "Tentang", path: "/", hash: "tentang", active: location.pathname === "/" && location.hash === "#tentang" },
   ];
+
+  const handleNavClick = (item: typeof navItems[0]) => {
+    if (item.hash) {
+      smoothScrollTo(item.hash);
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
@@ -17,18 +28,19 @@ const Header = () => {
           </h1>
           <nav className="hidden md:flex gap-6">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.name === "Home" ? "/" : `/${item.name.toLowerCase()}`}
+                to={item.path + (item.hash ? `#${item.hash}` : "")}
+                onClick={() => item.hash && handleNavClick(item)}
                 className={cn(
-                  "text-sm font-medium transition-all duration-300",
+                  "text-sm font-medium transition-colors duration-200",
                   item.active
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
@@ -39,10 +51,5 @@ const Header = () => {
     </header>
   );
 };
-
-// Helper function (should be imported from utils, but included here for clarity)
-function cn(...inputs: any[]) {
-  return inputs.filter(Boolean).join(' ');
-}
 
 export default Header;

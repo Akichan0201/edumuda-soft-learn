@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
 import heroIllustration from "@/assets/hero-illustration.png";
+import { smoothScrollTo } from "@/utils/smoothScroll";
 
 const HeroSection = () => {
+  const scrollToClasses = () => {
+    smoothScrollTo('kelas');
+  };
+
   return (
     <section className="pt-32 pb-16 px-6">
       <div className="max-w-6xl mx-auto">
@@ -14,9 +19,10 @@ const HeroSection = () => {
             <p className="text-lg text-muted-foreground">
               Tempat belajar online yang mudah dan menyenangkan untuk siswa SMP.
             </p>
-            <Button 
-              size="lg" 
-              className="neomorph neomorph-hover bg-primary text-primary-foreground rounded-2xl px-8 py-6 font-medium text-lg hover:shadow-neomorph-hover"
+            <Button
+              size="lg"
+              onClick={scrollToClasses}
+              className="neomorph neomorph-hover bg-primary text-primary-foreground rounded-2xl px-8 py-6 font-medium text-lg hover:shadow-neomorph-hover cursor-pointer"
             >
               Mulai Belajar
             </Button>

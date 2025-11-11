@@ -3,7 +3,7 @@ import NeomorphCard from "./NeomorphCard";
 
 const AboutSection = () => {
   return (
-    <section className="py-16 px-6">
+    <section id="tentang" className="py-16 px-6">
       <div className="max-w-4xl mx-auto">
         <NeomorphCard className="text-center fade-in" inset>
           <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-accent/30 neomorph flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-12">
